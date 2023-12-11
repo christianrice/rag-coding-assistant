@@ -10,7 +10,6 @@ services:
       ENABLE_MODULES: text2vec-openai
       DEFAULT_VECTORIZER_MODULE: text2vec-openai
       OPENAI_APIKEY: ${OPENAI_API_KEY}
-      OPENAI_ORGANIZATION: ${OPENAI_ORGANIZATION}
     volumes:
       - weaviate-data:/var/lib/weaviate/data
     restart: always
