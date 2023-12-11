@@ -1,12 +1,15 @@
 """
 tags: [langchain]
 description: |
-    Create a chain that does the following:
-    - Accept a string as input
-    - Format the prompt using variables from the object. The prompt has format instructions to adhere to the Actor model with a name and film_names
-    - Send the prompt to OpenAI
-    - Parse the response using Pydantic
+    - Accept string
+    - Format single prompt with output instructions using Pydantic
+    - Parse response using Pydantic
 """
+# Create a chain that does the following:
+# - Accept string as input
+# - Format the prompt using variables from the object. The prompt has output instructions using Pydantic
+# - Pass the prompt to OpenAI
+# - Parse the response using Pydantic
 from typing import List
 
 from langchain.output_parsers import PydanticOutputParser

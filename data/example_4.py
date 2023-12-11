@@ -1,12 +1,17 @@
 """
 tags: [langchain]
 description: |
-    Create a chain that does the following and streams the response:
-    - Accept a string as input
-    - Format messages from System and Human as a prompt
-    - Pass messages to OpenAI
-    - Parse the OpenAI response as a string
+    - Accept nothing
+    - Format System and Human prompts
+    - Parse response as string
+    - Stream response
 """
+# Create a chain that does the following and streams the response:
+# - Accept nothing as input
+# - Format messages from System and Human as a prompt
+# - Pass messages to OpenAI
+# - Parse the OpenAI response as a string
+# - Stream the response
 
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate

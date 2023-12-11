@@ -1,13 +1,17 @@
 """
 tags: [langchain]
 description: |
-    Create a chain that does the following:
-    - Accept a string as input
-    - Structure the input as an object to pass to the prompt
-    - Format the prompt using variables from the object
-    - Send the prompt to OpenAI
-    - Parse the response as a string
+    - Accept string
+    - Format single prompt
+    - Parse response as string
 """
+# Create a chain that does the following:
+# - Accept a string as input
+# - Structure the input as an object to pass to the prompt
+# - Format the prompt using variables from the object
+# - Send the prompt to OpenAI
+# - Parse the response as a string
+
 from langchain.chat_models import ChatOpenAI
 from langchain_core.runnables import RunnablePassthrough
 from langchain.prompts import ChatPromptTemplate

@@ -1,12 +1,15 @@
 """
 tags: [langchain]
 description: |
-    Create multiple chains that work together to do the following:
-    - The first chain should generate a prompt, send it OpenAI, parse the response as a string, and return the response to pass through to the next chain
-    - The second chain should generate a prompt, send it OpenAI, parse the response as a string
-    - The third chain should generate a prompt, send it OpenAI, parse the response as a string
-    - Finally, the fourth chain should format a series of messages using outputs from each of the first streams as AI, Human, and System messages, send those to OpenAI, and parse the result as a string
+    - Accept object
+    - Create multiple chains that work together
+    - Parse result as a string
 """
+# Create multiple chains that work together to do the following:
+# - The first chain should generate a prompt, send it OpenAI, parse the response as a string, and return the response to pass through to the next chain
+# - The second chain should generate a prompt, send it OpenAI, parse the response as a string
+# - The third chain should generate a prompt, send it OpenAI, parse the response as a string
+# - Finally, the fourth chain should format a series of messages using outputs from each of the first chains as AI, Human, and System messages, send those to OpenAI, and parse the result as a string
 from operator import itemgetter
 
 from langchain.chat_models import ChatOpenAI

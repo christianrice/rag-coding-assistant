@@ -1,11 +1,15 @@
 """
 tags: [langchain]
 description: |
-    Create a chain that does the following:
-    - Accept an object
-    - Format messages from System and Human using variables from the object
-    - Pass messages to OpenAI
+    - Accept object
+    - Format System and Human prompts
+    - Do not parse response
 """
+# Create a chain that does the following:
+# - Accept an object
+# - Format messages from System and Human using variables from the object
+# - Pass messages to OpenAI
+
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts.chat import (
     ChatPromptTemplate,

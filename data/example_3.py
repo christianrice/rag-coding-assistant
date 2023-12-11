@@ -1,13 +1,18 @@
 """
 tags: [langchain, rag]
 description: |
-    Create a chain that does the following:
-    - Accept a string as input
-    - Retrieve matching documents from a DocArrayInMemorySearch vectorstore, and pass through the results and the original question to a prompt
-    - Format the prompt using variables from the object
-    - Pass the prompt to OpenAI
-    - Parse the OpenAI response as a string
+    - Accept string
+    - Retrieve matching documents using DocArrayInMemorySearch vectorstore
+    - Format single prompt
+    - Parse response as string
 """
+# Create a chain that does the following:
+# - Accept a string as input
+# - Retrieve matching documents from a DocArrayInMemorySearch vectorstore, and pass through the results and the original question to a prompt
+# - Format the prompt using variables from the object
+# - Pass the prompt to OpenAI
+# - Parse the OpenAI response as a string
+
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.prompts import ChatPromptTemplate
@@ -16,12 +21,12 @@ from langchain.schema.runnable import RunnableParallel, RunnablePassthrough
 from langchain.vectorstores import DocArrayInMemorySearch
 
 vectorstore = DocArrayInMemorySearch.from_texts(
-    ["harrison worked at kensho", "bears like to eat honey"],
+    ["Tom likes clouds", "bears like honey"],
     embedding=OpenAIEmbeddings(),
 )
 retriever = vectorstore.as_retriever()
 
-template = """Answer the question based only on the following context:
+template = """Answer the question:
 {context}
 
 Question: {question}
@@ -36,4 +41,4 @@ setup_and_retrieval = RunnableParallel(
 
 chain = setup_and_retrieval | prompt | model | output_parser
 
-chain.invoke("where did harrison work?")
+chain.invoke("what does Tom like?")

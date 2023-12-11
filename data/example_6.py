@@ -1,13 +1,18 @@
 """
 tags: [langchain]
 description: |
-    Create a chain that does the following:
-    - Accept a string
-    - Structure the input as an object to pass to the prompt
-    - Format the prompt using variables from the object
-    - Bind a function for joke that returns a setup and punchline, and pass the message to OpenAI
-    - Parse the response as JSON returning only the setup
+    - Accept string
+    - Format single prompt
+    - Bind a function
+    - Parse response as JSON
 """
+# Create a chain that does the following:
+# - Accept a string
+# - Structure the input as an object to pass to the prompt
+# - Format the prompt using variables from the object
+# - Bind a function for joke that returns a setup and punchline, and pass the message to OpenAI
+# - Parse the response as JSON returning only the setup
+
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.output_parsers.openai_functions import JsonKeyOutputFunctionsParser
