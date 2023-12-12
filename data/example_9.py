@@ -55,4 +55,6 @@ output_parser = StrOutputParser()
 
 chain = setup_and_retrieval | prompt | model | output_parser
 
-chain.invoke("Here is a request.")
+# Stream the chain
+for chunk in chain.stream("Here is a request"):
+    print(chunk, end="", flush=True)
