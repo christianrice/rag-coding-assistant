@@ -45,4 +45,4 @@ chain = (
     | parser
 )
 
-chain.invoke("Generate the filmography for a random actor who was in Breaking Bad.")
+chain.invoke("Generate the filmography for a random actor from Birdman.")
