@@ -11,6 +11,11 @@ GPT-4 does not currently have any knowledge of LCEL in its training data, so thi
 - When you provide instructions to the assistant for a chain you would like to develop, the assistant retrieves relevant examples from Weaviate and adds them as context to your request
 - The assisant will output working code in LCEL according to your specifications
 
+You can read about the process in more detail [on Substack](https://open.substack.com/pub/deployingai/p/lab-notes-building-an-ai-code-generator?r=l2jd4&utm_campaign=post&utm_medium=web&showWelcome=true).
+
+Or watch a [video walkthrough](https://www.youtube.com/watch?v=xWDEdkiRA98).
+
+
 ## Current Status
 
 This is a working prototype designed for local development.
