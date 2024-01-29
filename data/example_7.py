@@ -12,7 +12,7 @@ description: |
 # - Finally, the fourth chain should format a series of messages using outputs from each of the first chains as AI, Human, and System messages, send those to OpenAI, and parse the result as a string
 from operator import itemgetter
 
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain.schema.output_parser import StrOutputParser
@@ -43,7 +43,10 @@ arguments_against = (
 final_responder = (
     ChatPromptTemplate.from_messages(
         [
-            ("ai", "Review your original response (below), and update it based upon the pros and cons.{original_response}"),
+            (
+                "ai",
+                "Review your original response (below), and update it based upon the pros and cons.{original_response}",
+            ),
             ("human", "Pros:\n{results_1}\n\nCons:\n{results_2}"),
             ("system", "Generate a final response given the critique"),
         ]

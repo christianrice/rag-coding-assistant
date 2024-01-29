@@ -13,7 +13,7 @@ description: |
 # - Bind a function for joke that returns a setup and punchline, and pass the message to OpenAI
 # - Parse the response as JSON returning only the setup
 
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.output_parsers.openai_functions import JsonKeyOutputFunctionsParser
 from langchain.schema.runnable import RunnablePassthrough

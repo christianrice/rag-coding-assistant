@@ -12,21 +12,14 @@ description: |
 # - Send the prompt to OpenAI
 # - Parse the response as a string
 
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain_core.runnables import RunnablePassthrough
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 
-prompt = ChatPromptTemplate.from_template(
-    "Tell me a short joke about {topic}"
-)
+prompt = ChatPromptTemplate.from_template("Tell me a short joke about {topic}")
 output_parser = StrOutputParser()
 model = ChatOpenAI(model="gpt-3.5-turbo")
-chain = (
-    {"topic": RunnablePassthrough()} 
-    | prompt
-    | model
-    | output_parser
-)
+chain = {"topic": RunnablePassthrough()} | prompt | model | output_parser
 
 chain.invoke("ice cream")
